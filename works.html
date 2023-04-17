@@ -60,7 +60,6 @@
                 <a
                   href="./index.html"
                   class="block py-2 pl-4 pr-4 text-gray-700 text-xl font-semibold"
-                  aria-current="page"
                   >홈</a
                 >
               </li>
@@ -76,12 +75,20 @@
                 <a
                   href="./works.html"
                   class="block py-2 pl-4 pr-4 text-xl font-semibold text-gray-700 hover:text-cyan-700 hover:transition-all hover:duration-300"
+                  aria-current="page"
                   >활동</a
                 >
               </li>
               <li>
                 <a
-                  href="./talks.html"
+                  href="./sns.html"
+                  class="block py-2 pl-4 pr-4 text-xl font-semibold text-gray-700 hover:text-cyan-700 hover:transition-all hover:duration-300"
+                  >SNS</a
+                >
+              </li>
+              <li>
+                <a
+                  href="./project.html"
                   class="block py-2 pl-4 pr-4 text-xl font-semibold text-gray-700 hover:text-cyan-700 hover:transition-all hover:duration-300"
                   >프로젝트</a
                 >
@@ -94,18 +101,18 @@
 
     <!--main page-->
     <div class="pt-24">
-      <div class="container px-3 mx-auto pb-20">
+      <div class="container px-3 mx-auto pb-10">
         <div
           class="w-full justify-center text-center"
         >
-          <p class="leading-normal text-2xl mb-8 pt-20 text-3xl font-semibold">
-            뮤직비디오와 콘서트 영상을 시청할 수 있습니다
+          <p class="leading-normal text-2xl mb-8 pt-10 text-3xl font-semibold">
+            <span class="text-gray-800 text-3xl">뮤직비디오, 공연, 라디오</span> 를 시청할 수 있습니다
           </p>
         </div>
     </div>
 
     <!-- works page -->
-    <section class="bg-white border-b py-8">
+    <section class="bg-zinc-50 border-b py-8">
       <div class="container mx-auto flex flex-wrap pt-4 pb-12">
         <h2
           class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800"
@@ -117,7 +124,7 @@
             class="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"
           ></div>
         </div>
-        <div class="w-full p-6 flex flex-col flex-grow flex-shrink">
+        <div class="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink">
           <div
             class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow"
           >
@@ -127,7 +134,7 @@
             </p>
           </div>
         </div>
-        <div class="w-full p-6 flex flex-col flex-grow flex-shrink">
+        <div class="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink">
           <div
             class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow"
           >
@@ -137,7 +144,7 @@
             </p>
           </div>
         </div>
-        <div class="w-full p-6 flex flex-col flex-grow flex-shrink">
+        <div class="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink">
           <div
             class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow"
           >
@@ -147,37 +154,59 @@
             </p>
           </div>
         </div>
-
       </div>
     </section>
-    
-    <!-- projects page -->
-    <section class="container mx-auto text-center py-6 mb-12">
-      <h2
-        class="w-full my-2 text-4xl font-bold leading-tight text-center text-white"
-      >
-        - 이 외의 프로젝트 -
-      </h2>
-      <div class="w-full mb-4">
-        <div
-          class="h-1 mx-auto bg-white w-1/6 opacity-25 my-0 py-0 rounded-t"
-        ></div>
+
+    <section class="border-b py-8">
+      <div class="container mx-auto flex flex-wrap pt-4 pb-12">
+        <h2
+          class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800"
+        >
+          Stage
+        </h2>
+        <div class="w-full mb-4">
+          <div
+            class="h-1 mx-auto bg-white w-64 opacity-25 my-0 py-0 rounded-t"
+          ></div>
+        </div>
+        <div class="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink">
+          <div
+            class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow"
+          >
+            <iframe width="380" height="215" src="https://www.youtube.com/embed/sT6J1FQ6bMY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <p class="w-full text-gray-600 px-6 text-center text-lg font-semibold pt-5 pb-5">
+              아지트라이브 - 놀이공원, 세탁소
+            </p>
+          </div>
+        </div>
+        <div class="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink">
+          <div
+            class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow"
+          >
+            <iframe width="380" height="215" src="https://www.youtube.com/embed/BO1XLNqz4no" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <p class="w-full text-gray-600 px-6 text-center text-lg font-semibold pt-5 pb-5">
+              코지팝 - 세탁소
+            </p>
+          </div>
+        </div>
+        <div class="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink">
+          <div
+            class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow"
+          >
+            <iframe width="380" height="215" src="https://www.youtube.com/embed/kmLmsXqL6BI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <p class="w-full text-gray-600 px-6 text-center text-lg font-semibold pt-5 pb-5">
+              온스테이지 - 깜빡 (Feat.카더가든)
+            </p>
+          </div>
+        </div>
       </div>
-      <h4 class="my-4 text-2xl leading-tight">1. Html CSS 웹페이지</h4>
-      <h4 class="my-4 text-2xl leading-tight">2. 포트폴리오 웹페이지</h4>
-      <h4 class="my-4 text-2xl leading-tight">3. bootstrap, tailwind 적용</h4><br><br>
-      <a href="./project.html"
-        class="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out"
-      >
-        프로젝트 보러가기
-      </a>
     </section>
 
     <!--Footer-->
     <footer class="bg-white">
       <div class="container mx-auto px-10">
-        <div class="w-full flex flex-col md:flex-row py-6">
-          <div class="flex-1 ml-20">
+        <div class="w-full flex flex-col md:flex-row py-6 ml-28">
+          <div class="flex-1">
             <a
               href="./songs.html"
               class="text-gray-900 hover:text-cyan-700 md:mb-6 no-underline hover:underline hover:underline-offset-2"
@@ -194,7 +223,7 @@
           </div>
           <div class="flex-1">
             <a
-              href="/list"
+              href="./works.html"
               class="text-gray-900 hover:text-cyan-700 md:mb-6 no-underline hover:underline hover:underline-offset-2"
               >활동</a
             >
@@ -212,7 +241,7 @@
           </div>
           <div class="flex-1">
             <a
-              href="/mypage"
+              href="./sns.html"
               class="text-gray-900 hover:text-cyan-700 md:mb-6 no-underline hover:underline hover:underline-offset-2"
               >SNS</a
             >
@@ -221,13 +250,16 @@
                 <p class="text-gray-500">인스타그램</p>
               </li>
               <li class="mt-2 inline-block mr-2 md:block md:ml-0">
-                <p class="text-gray-500">트위터</p>
+                <p class="text-gray-500">유튜브</p>
+              </li>
+              <li class="mt-2 inline-block mr-2 md:block md:ml-0">
+                <p class="text-gray-500">공식홈페이지</p>
               </li>
             </ul>
           </div>
           <div class="flex-1">
             <a
-              href="/info"
+              href="./project.html"
               class="text-gray-900 hover:text-cyan-700 md:mb-6 no-underline hover:underline hover:underline-offset-2"
               >프로젝트</a
             >
