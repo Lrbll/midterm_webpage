@@ -26,7 +26,7 @@
 
   <body class="leading-normal tracking-normal text-white gradient">
     <!-- 헤더 영역 -->
-    <header class="fixed w-full shadow-md">
+    <header class="z-10 fixed w-full shadow-md">
       <nav class="bg-white border-gray-200 py-2.5">
         <div
           class="flex flex-wrap items-center justify-between max-w-screen-xl px-4 mx-auto"
@@ -52,13 +52,13 @@
               class="text-white bg-cyan-700 hover:bg-cyan-800 focus:ring-4 focus:ring-cyan-300 rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0 shadow-md"
               >로그인</a
             >
+            <% } %>
             <a
               href="/auth/register"
               class="text-white bg-cyan-700 hover:bg-cyan-800 focus:ring-4 focus:ring-cyan-300 rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0 ml-2 shadow-md"
               >회원가입</a
             >
           </div>
-          <% } %>
           <div
             class="items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1"
           >

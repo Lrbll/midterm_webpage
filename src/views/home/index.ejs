@@ -26,7 +26,7 @@
 
   <body class="leading-normal tracking-normal text-white gradient">
     <!-- 헤더 영역 -->
-    <header class="fixed w-full shadow-md">
+    <header class="z-10 fixed w-full shadow-md">
       <nav class="bg-white border-gray-200 py-2.5">
         <div
           class="flex flex-wrap items-center justify-between max-w-screen-xl px-4 mx-auto"
@@ -52,13 +52,13 @@
               class="text-white bg-cyan-700 hover:bg-cyan-800 focus:ring-4 focus:ring-cyan-300 rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0 shadow-md"
               >로그인</a
             >
+            <% } %>
             <a
               href="/auth/register"
               class="text-white bg-cyan-700 hover:bg-cyan-800 focus:ring-4 focus:ring-cyan-300 rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0 ml-2 shadow-md"
               >회원가입</a
             >
           </div>
-          <% } %>
           <div
             class="items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1"
           >
@@ -117,10 +117,19 @@
           <h1 class="my-4 text-5xl font-bold leading-tight py-10">
             가수 유라의 팬클럽 사이트 입니다
           </h1>
+          <% if (is_logined) { %>
+          <h1 class="leading-normal text-black text-3xl font-bold mb-8">
+            안녕하세요, <span class="text-white overline decoration-dashed"><%= id %></span> 님
+          </h1>
+          <p class="leading-normal text-2xl mb-8">
+            새로운 활동을 둘러보시겠어요?
+          </p>
+          <% } else { %>
           <p class="leading-normal text-2xl mb-8">
             이 곳에서 유라의 노래, 공연, 활동들을 확인해보세요
           </p>
           <a href="/auth/login" class="text-black bg-white hover:bg-black hover:text-white font-semibold rounded-3xl text-sm px-4 lg:px-6 py-2 lg:py-3 sm:mr-2 lg:mr-0 shadow-md">팬클럽 가입</a>
+          <% } %>
         </div>
     </div>
 
