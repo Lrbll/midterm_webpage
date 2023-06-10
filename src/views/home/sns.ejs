@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>youra fanclub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Song+Myung&display=swap");
+      body {
+        font-family: "Song Myung", serif;
+      }
+      .gradient {
+        background: linear-gradient(90deg, #0e7490 0%, #f9a8d4 100%);
+      }
+    </style>
+    <style type="text/tailwindcss">
+      @layer utilities {
+        a[aria-current="page"] {
+          @apply text-cyan-700;
+        }
+      }
+    </style>
+  </head>
+
+  <body class="leading-normal tracking-normal text-white gradient">
+    <!-- 헤더 영역 -->
+    <header class="fixed w-full shadow-md">
+      <nav class="bg-white border-gray-200 py-2.5">
+        <div
+          class="flex flex-wrap items-center justify-between max-w-screen-xl px-4 mx-auto"
+        >
+          <a href="/" class="flex items-center">
+            <!-- <img src="./images/logo.svg" class="h-6 mr-3 sm:h-9" alt="Logo" /> -->
+            <span
+              class="self-center text-xl font-semibold font-semibold whitespace-nowrap text-black"
+              >Youra fanclub</span
+            >
+          </a>
+          <% if (is_logined) { %>
+            <div class="flex items-center lg:order-2">
+              <a
+                href="/auth/logout"
+                class="text-white bg-cyan-700 hover:bg-cyan-800 focus:ring-4 focus:ring-cyan-300 rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0 shadow-md"
+                >로그아웃</a
+              >
+          <% } else { %>
+          <div class="flex items-center lg:order-2">
+            <a
+              href="/auth/login"
+              class="text-white bg-cyan-700 hover:bg-cyan-800 focus:ring-4 focus:ring-cyan-300 rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0 shadow-md"
+              >로그인</a
+            >
+            <a
+              href="/auth/register"
+              class="text-white bg-cyan-700 hover:bg-cyan-800 focus:ring-4 focus:ring-cyan-300 rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0 ml-2 shadow-md"
+              >회원가입</a
+            >
+          </div>
+          <% } %>
+          <div
+            class="items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1"
+          >
+            <ul
+              class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0"
+            >
+              <li>
+                <a
+                  href="/"
+                  class="block py-2 pl-4 pr-4 text-gray-700 text-xl font-semibold"
+                  >홈</a
+                >
+              </li>
+
+              <li>
+                <a
+                  href="/songs"
+                  class="block py-2 pl-4 pr-4 text-xl font-semibold text-gray-700 hover:text-cyan-700 hover:transition-all hover:duration-300"
+                  >노래</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/works"
+                  class="block py-2 pl-4 pr-4 text-xl font-semibold text-gray-700 hover:text-cyan-700 hover:transition-all hover:duration-300"
+                  >활동</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/sns"
+                  class="block py-2 pl-4 pr-4 text-xl font-semibold text-gray-700 hover:text-cyan-700 hover:transition-all hover:duration-300"
+                  aria-current="page"
+                  >SNS</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/project"
+                  class="block py-2 pl-4 pr-4 text-xl font-semibold text-gray-700 hover:text-cyan-700 hover:transition-all hover:duration-300"
+                  >프로젝트</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- profile page -->
+    <section class="bg-cyan-600/20 border-b py-8">
+      <div class="container max-w-5xl mx-auto m-8 mt-16">
+        <h2
+          class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800"
+        >
+          SNS
+        </h2>
+        <div class="w-full mb-4">
+          <div
+            class="h-1 mx-auto bg-white w-64 opacity-25 my-0 py-0 rounded-t"
+          ></div>
+        </div>
+        <div class="flex flex-wrap">
+          <div class="w-full sm:w-1/2 p-6 mt-6">
+            <div class="align-middle">
+              <img
+                src="img/youra_profile.jpg"
+                class="w-64 h-72 object-cover mx-auto"
+              />
+            </div>
+          </div>
+          <div class="w-full sm:w-1/2 p-6 mt-6">
+            <div class="align-middle">
+              <ul class="mt-12">
+                <li class="justify-self">
+                  <svg
+                    class="w-10 h-10 inline-block"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 448 512"
+                  >
+                    <!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                    <path
+                      d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"
+                    />
+                  </svg>
+                  <a
+                    href="https://www.instagram.com/you.ra/"
+                    class="text-gray-900 text-2xl font-bold pt-5"
+                    >인스타그램</a
+                  >
+                </li>
+                <li class="justify-self mt-5">
+                  <svg
+                    class="w-10 h-10 inline-block"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 576 512"
+                  >
+                    <!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                    <path
+                      d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"
+                    />
+                  </svg>
+                  <a
+                    href="https://www.youtube.com/channel/UCrgmcWsu4pBRmEQz1l5cklQ"
+                    class="text-gray-900 text-2xl font-bold pt-5"
+                    >유튜브 Youra</a
+                  >
+                </li>
+                <li class="justify-self mt-5">
+                  <svg
+                    class="w-10 h-10 inline-block"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 576 512"
+                  >
+                    <!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                    <path
+                      d="M575.8 255.5c0 18-15 32.1-32 32.1h-32l.7 160.2c0 2.7-.2 5.4-.5 8.1V472c0 22.1-17.9 40-40 40H456c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1H416 392c-22.1 0-40-17.9-40-40V448 384c0-17.7-14.3-32-32-32H256c-17.7 0-32 14.3-32 32v64 24c0 22.1-17.9 40-40 40H160 128.1c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2H104c-22.1 0-40-17.9-40-40V360c0-.9 0-1.9 .1-2.8V287.6H32c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z"
+                    />
+                  </svg>
+                  <a
+                    href="https://www.munhwain.kr/team4-1"
+                    class="text-gray-900 text-2xl font-bold pt-5"
+                    >공식 홈페이지</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--Footer-->
+    <footer class="bg-white">
+      <div class="container mx-auto px-10">
+        <div class="w-full flex flex-col md:flex-row py-6 ml-28">
+          <div class="flex-1">
+            <a
+              href="/songs"
+              class="text-gray-900 hover:text-cyan-700 md:mb-6 no-underline hover:underline hover:underline-offset-2"
+              >노래</a
+            >
+            <ul class="list-reset mb-6">
+              <li class="mt-2 inline-block mr-2 md:block md:ml-0">
+                <p class="text-gray-500">앨범</p>
+              </li>
+              <li class="mt-2 inline-block mr-2 md:block md:ml-0">
+                <p class="text-gray-500">수록곡</p>
+              </li>
+            </ul>
+          </div>
+          <div class="flex-1">
+            <a
+              href="/works"
+              class="text-gray-900 hover:text-cyan-700 md:mb-6 no-underline hover:underline hover:underline-offset-2"
+              >활동</a
+            >
+            <ul class="list-reset mb-6">
+              <li class="mt-2 inline-block mr-2 md:block md:ml-0">
+                <p class="text-gray-500">공연</p>
+              </li>
+              <li class="mt-2 inline-block mr-2 md:block md:ml-0">
+                <p class="text-gray-500">예능</p>
+              </li>
+              <li class="mt-2 inline-block mr-2 md:block md:ml-0">
+                <p class="text-gray-500">라디오</p>
+              </li>
+            </ul>
+          </div>
+          <div class="flex-1">
+            <a
+              href="/sns"
+              class="text-gray-900 hover:text-cyan-700 md:mb-6 no-underline hover:underline hover:underline-offset-2"
+              >SNS</a
+            >
+            <ul class="list-reset mb-6">
+              <li class="mt-2 inline-block mr-2 md:block md:ml-0">
+                <p class="text-gray-500">인스타그램</p>
+              </li>
+              <li class="mt-2 inline-block mr-2 md:block md:ml-0">
+                <p class="text-gray-500">유튜브</p>
+              </li>
+              <li class="mt-2 inline-block mr-2 md:block md:ml-0">
+                <p class="text-gray-500">공식홈페이지</p>
+              </li>
+            </ul>
+          </div>
+          <div class="flex-1">
+            <a
+              href="/project"
+              class="text-gray-900 hover:text-cyan-700 md:mb-6 no-underline hover:underline hover:underline-offset-2"
+              >프로젝트</a
+            >
+            <ul class="list-reset mb-6">
+              <li class="mt-2 inline-block mr-2 md:block md:ml-0">
+                <p class="text-gray-500">Contact</p>
+              </li>
+              <li class="mt-2 inline-block mr-2 md:block md:ml-0">
+                <p class="text-gray-500">Github</p>
+              </li>
+              <li class="mt-2 inline-block mr-2 md:block md:ml-0">
+                <p class="text-gray-500">Links</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

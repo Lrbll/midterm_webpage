@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>youra fanclub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Song+Myung&display=swap");
+      body {
+        font-family: "Song Myung", serif;
+      }
+      .gradient {
+        background: linear-gradient(90deg, #0e7490 0%, #f9a8d4 100%);
+      }
+    </style>
+    <style type="text/tailwindcss">
+      @layer utilities {
+        a[aria-current="page"] {
+          @apply text-cyan-700;
+        }
+      }
+    </style>
+  </head>
+
+  <body class="leading-normal tracking-normal text-white gradient">
+    <!-- 헤더 영역 -->
+    <header class="fixed w-full shadow-md">
+      <nav class="bg-white border-gray-200 py-2.5">
+        <div
+          class="flex flex-wrap items-center justify-between max-w-screen-xl px-4 mx-auto"
+        >
+          <a href="/" class="flex items-center">
+            <!-- <img src="./images/logo.svg" class="h-6 mr-3 sm:h-9" alt="Logo" /> -->
+            <span
+              class="self-center text-xl font-semibold font-semibold whitespace-nowrap text-black"
+              >Youra fanclub</span
+            >
+          </a>
+          <% if (is_logined) { %>
+            <div class="flex items-center lg:order-2">
+              <a
+                href="/auth/logout"
+                class="text-white bg-cyan-700 hover:bg-cyan-800 focus:ring-4 focus:ring-cyan-300 rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0 shadow-md"
+                >로그아웃</a
+              >
+          <% } else { %>
+          <div class="flex items-center lg:order-2">
+            <a
+              href="/auth/login"
+              class="text-white bg-cyan-700 hover:bg-cyan-800 focus:ring-4 focus:ring-cyan-300 rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0 shadow-md"
+              >로그인</a
+            >
+            <a
+              href="/auth/register"
+              class="text-white bg-cyan-700 hover:bg-cyan-800 focus:ring-4 focus:ring-cyan-300 rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0 ml-2 shadow-md"
+              >회원가입</a
+            >
+          </div>
+          <% } %>
+          <div
+            class="items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1"
+          >
+            <ul
+              class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0"
+            >
+              <li>
+                <a
+                  href="/"
+                  class="block py-2 pl-4 pr-4 text-gray-700 text-xl font-semibold"
+                  >홈</a
+                >
+              </li>
+
+              <li>
+                <a
+                  href="/songs"
+                  class="block py-2 pl-4 pr-4 text-xl font-semibold text-gray-700 hover:text-cyan-700 hover:transition-all hover:duration-300"
+                  aria-current="page"
+                  >노래</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/works"
+                  class="block py-2 pl-4 pr-4 text-xl font-semibold text-gray-700 hover:text-cyan-700 hover:transition-all hover:duration-300"
+                  >활동</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/sns"
+                  class="block py-2 pl-4 pr-4 text-xl font-semibold text-gray-700 hover:text-cyan-700 hover:transition-all hover:duration-300"
+                  >SNS</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/project"
+                  class="block py-2 pl-4 pr-4 text-xl font-semibold text-gray-700 hover:text-cyan-700 hover:transition-all hover:duration-300"
+                  >프로젝트</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- songs page -->
+    <section class="bg-cyan-600/20 border-b py-8">
+      <div class="container max-w-5xl mx-auto m-8">
+        <h3
+          class="w-full text-gray-900 text-center text-3xl font-semibold pt-20 pb-20"
+        >
+          <span class="underline decoration-dashed underline-offset-2"
+            >유라의 앨범과 수록곡</span
+          >
+          들을 모아놓은 공간입니다
+        </h3>
+
+        <h2
+          class="w-full my-2 text-5xl font-bold leading-tight text-center text-black"
+        >
+          Songs
+        </h2>
+        <div class="w-full mb-4">
+          <div
+            class="h-1 mx-auto bg-white w-64 opacity-25 my-0 py-0 rounded-t"
+          ></div>
+        </div>
+        <div class="flex flex-wrap">
+          <div class="w-full sm:w-1/2 p-6 mt-6">
+            <div class="align-middle">
+              <img
+                src="img/mandong.jpg"
+                class="w-44 h-44 object-cover mx-auto"
+              />
+            </div>
+          </div>
+          <div class="w-full sm:w-1/2 p-6 mt-6">
+            <div class="align-middle">
+              <h3 class="text-2xl text-gray-800 font-bold leading-none mb-3">
+                이런 분위기는 기회다 (The Vibe is a Chance)<br />
+                - 유라, 만동
+              </h3>
+              <p class="text-gray-600 mb-8">
+                1. 지느러미 (The Fin)
+                <br />
+                2. 시간을 아우르는 공 (Vacancy Hugs Time)
+                <br />
+                3. 축 (Sag)
+                <br />
+                4. 샐리 넌 과감해질 필요가 있어 (Sally, Go Wild!)
+                <br />
+                5. 돛이 있다면야 (If There’s a Sail)
+                <br />
+                6. 요술 수프 (Sorcery Soup)
+              </p>
+            </div>
+          </div>
+          <div
+            class="h-1 mx-auto bg-white w-full opacity-25 my-0 py-0 rounded-t"
+          ></div>
+          <div class="w-full sm:w-1/2 p-6 mt-10 mb-10">
+            <div class="align-middle">
+              <img
+                src="img/Jungle_Bike.jpg"
+                class="w-44 h-44 object-cover mx-auto"
+              />
+            </div>
+          </div>
+          <div class="w-full sm:w-1/2 p-6 mt-10 mb-10">
+            <div class="align-middle">
+              <h3 class="text-2xl text-gray-800 font-bold leading-none mb-3">
+                Jungle Bike<br />
+                - 유라
+              </h3>
+              <p class="text-gray-600 mb-8">Jungle Bike</p>
+            </div>
+          </div>
+          <div
+            class="h-1 mx-auto bg-white w-full opacity-25 my-0 py-0 rounded-t"
+          ></div>
+          <div class="w-full sm:w-1/2 p-6 mt-10 mb-10">
+            <div class="align-middle">
+              <img
+                src="img/Best_regards.jpg"
+                class="w-44 h-44 object-cover mx-auto"
+              />
+            </div>
+          </div>
+          <div class="w-full sm:w-1/2 p-6 mt-10 mb-10">
+            <div class="align-middle">
+              <h3 class="text-2xl text-gray-800 font-bold leading-none mb-3">
+                어떤 우울이 우리를 흔들겠어요 (Best regards)<br />
+                - 유라
+              </h3>
+              <p class="text-gray-600 mb-8">
+                <span class="text-pink-200"
+                  >어떤 우울이 우리를 흔들겠어요 (Best regards) - recommend
+                  track</span
+                ><br />
+              </p>
+            </div>
+          </div>
+          <div
+            class="h-1 mx-auto bg-white w-full opacity-25 my-0 py-0 rounded-t"
+          ></div>
+          <div class="w-full sm:w-1/2 p-6 mt-10 mb-10">
+            <div class="align-middle">
+              <img src="img/Rawww.jpg" class="w-44 h-44 object-cover mx-auto" />
+            </div>
+          </div>
+          <div class="w-full sm:w-1/2 p-6 mt-10 mb-10">
+            <div class="align-middle">
+              <h3 class="text-2xl text-gray-800 font-bold leading-none mb-3">
+                Rawww<br />
+                - 유라
+              </h3>
+              <p class="text-gray-600 mb-8">Rawww</p>
+            </div>
+          </div>
+          <div
+            class="h-1 mx-auto bg-white w-full opacity-25 my-0 py-0 rounded-t"
+          ></div>
+          <div class="w-full sm:w-1/2 p-6 mt-10 mb-10">
+            <div class="align-middle">
+              <img
+                src="img/Pacemaker.jpg"
+                class="w-44 h-44 object-cover mx-auto"
+              />
+            </div>
+          </div>
+          <div class="w-full sm:w-1/2 p-6 mt-10 mb-10">
+            <div class="align-middle">
+              <h3 class="text-2xl text-gray-800 font-bold leading-none mb-3">
+                Pacemaker<br />
+                - 유라
+              </h3>
+              <p class="text-gray-600 mb-8">
+                1. 놀이공원<br />
+                2. 서울 사이보그
+              </p>
+            </div>
+          </div>
+          <div
+            class="h-1 mx-auto bg-white w-full opacity-25 my-0 py-0 rounded-t"
+          ></div>
+          <div class="w-full sm:w-1/2 p-6 mt-10 mb-10">
+            <div class="align-middle">
+              <img src="img/mimi.jpg" class="w-44 h-44 object-cover mx-auto" />
+            </div>
+          </div>
+          <div class="w-full sm:w-1/2 p-6 mt-10 mb-10">
+            <div class="align-middle">
+              <h3 class="text-2xl text-gray-800 font-bold leading-none mb-3">
+                Gaussian<br />
+                - 유라
+              </h3>
+              <p class="text-gray-600 mb-8">
+                <span class="text-pink-200"
+                  >1. 미미(MIMI) - recommend track</span
+                ><br />
+                2. 분홍 (PINK!)<br />
+                3. 손가락으로 아 긋기만 해도 (ZEBRA)<br />
+                4. 숨을 참는 괴물 (AIRPLANE MODE)<br />
+                5. 유기인형 (BYE BYE)<br />
+                6. 하양 (RAL 9002) (Feat. 헤이즈)<br />
+              </p>
+            </div>
+          </div>
+          <div
+            class="h-1 mx-auto bg-white w-full opacity-25 my-0 py-0 rounded-t"
+          ></div>
+        </div>
+      </div>
+      <div class="w-full justify-center text-center">
+        <a
+          href="https://www.munhwain.kr/team4-1"
+          class="text-black bg-white hover:bg-black hover:text-white font-semibold rounded-3xl text-sm px-4 lg:px-8 py-2 lg:py-4 sm:mr-2 lg:mr-0 shadow-md mx-auto"
+          >유라 전체 앨범 보러가기</a
+        >
+      </div>
+    </section>
+
+    <!--Footer-->
+    <footer class="bg-white">
+      <div class="container mx-auto px-10">
+        <div class="w-full flex flex-col md:flex-row py-6 ml-28">
+          <div class="flex-1">
+            <a
+              href="/songs"
+              class="text-gray-900 hover:text-cyan-700 md:mb-6 no-underline hover:underline hover:underline-offset-2"
+              >노래</a
+            >
+            <ul class="list-reset mb-6">
+              <li class="mt-2 inline-block mr-2 md:block md:ml-0">
+                <p class="text-gray-500">앨범</p>
+              </li>
+              <li class="mt-2 inline-block mr-2 md:block md:ml-0">
+                <p class="text-gray-500">수록곡</p>
+              </li>
+            </ul>
+          </div>
+          <div class="flex-1">
+            <a
+              href="/works"
+              class="text-gray-900 hover:text-cyan-700 md:mb-6 no-underline hover:underline hover:underline-offset-2"
+              >활동</a
+            >
+            <ul class="list-reset mb-6">
+              <li class="mt-2 inline-block mr-2 md:block md:ml-0">
+                <p class="text-gray-500">공연</p>
+              </li>
+              <li class="mt-2 inline-block mr-2 md:block md:ml-0">
+                <p class="text-gray-500">예능</p>
+              </li>
+              <li class="mt-2 inline-block mr-2 md:block md:ml-0">
+                <p class="text-gray-500">라디오</p>
+              </li>
+            </ul>
+          </div>
+          <div class="flex-1">
+            <a
+              href="/sns"
+              class="text-gray-900 hover:text-cyan-700 md:mb-6 no-underline hover:underline hover:underline-offset-2"
+              >SNS</a
+            >
+            <ul class="list-reset mb-6">
+              <li class="mt-2 inline-block mr-2 md:block md:ml-0">
+                <p class="text-gray-500">인스타그램</p>
+              </li>
+              <li class="mt-2 inline-block mr-2 md:block md:ml-0">
+                <p class="text-gray-500">유튜브</p>
+              </li>
+              <li class="mt-2 inline-block mr-2 md:block md:ml-0">
+                <p class="text-gray-500">공식홈페이지</p>
+              </li>
+            </ul>
+          </div>
+          <div class="flex-1">
+            <a
+              href="/project"
+              class="text-gray-900 hover:text-cyan-700 md:mb-6 no-underline hover:underline hover:underline-offset-2"
+              >프로젝트</a
+            >
+            <ul class="list-reset mb-6">
+              <li class="mt-2 inline-block mr-2 md:block md:ml-0">
+                <p class="text-gray-500">Contact</p>
+              </li>
+              <li class="mt-2 inline-block mr-2 md:block md:ml-0">
+                <p class="text-gray-500">Github</p>
+              </li>
+              <li class="mt-2 inline-block mr-2 md:block md:ml-0">
+                <p class="text-gray-500">Links</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
