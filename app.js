@@ -5,8 +5,6 @@ const app = express(); // app이라는 변수에 express를 호출하는 함수�
 const cookieParser = require("cookie-parser");
 const session = require("express-session");
 
-const port = 8000; // 서버 포트 번호는 8000
-
 //라우팅
 const home = require("./src/routes/home");
 const auth = require("./src/routes/auth");
@@ -30,9 +28,5 @@ app.use(
 
 app.use("/", home);
 app.use("/auth", auth);
-
-app.listen(port, () => {
-  console.log("서버 실행"); // 단순히 편의를 위해 서버가 실행되면 로그가 기록
-});
 
 module.exports = app;
