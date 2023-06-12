@@ -1,4 +1,5 @@
 "use strict";
+const app = require("../app.js");
 const port = 8000; // 서버 포트 번호는 8000
 
 app.listen(port, () => {
