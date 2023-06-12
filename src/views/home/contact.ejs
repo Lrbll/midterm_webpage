@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>youra fanclub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Song+Myung&display=swap");
+      body {
+        font-family: "Song Myung", serif;
+      }
+      .gradient {
+        background: linear-gradient(90deg, #0e7490 0%, #f9a8d4 100%);
+      }
+    </style>
+    <style type="text/tailwindcss">
+      @layer utilities {
+        a[aria-current="page"] {
+          @apply text-cyan-700;
+        }
+      }
+    </style>
+  </head>
+
+  <body class="leading-normal tracking-normal text-white overflow-x-hidden">
+    <!-- 헤더 영역 -->
+    <header class="z-10 fixed w-full shadow-md">
+      <nav class="gradient border-gray-200 py-2.5">
+        <div
+          class="flex flex-wrap items-center justify-between max-w-screen-xl px-4 mx-auto"
+        >
+          <a href="/" class="flex items-center">
+            <span
+              class="self-center text-xl font-semibold font-semibold whitespace-nowrap text-black my-2"
+              >Youra fanclub</span
+            >
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <!-- profile page -->
+    <section class="bg-zinc-50 border-b py-8">
+      <div class="container max-w-5xl mx-auto m-8 mt-16">
+        <div class="flex w-full mb-4">
+          <div class="flex flex-col flex-wrap mx-auto">
+            <div class="flex-1 w-full mt-5">
+              <div class="flex flex-col h-full">
+                <div class="text-black mb-5">
+                  <div
+                    class="mx-auto lg:mx-0 gradient text-gray-800 font-bold rounded-full mt-6 mb-2 py-4 px-8 shadow-lg"
+                  >
+                    Contact
+                  </div>
+                </div>
+                <div class="text-black mx-auto">
+                  <p>Phone: 010-8109-2930</p>
+                  <p>Email: ekdus207@naver.com</p>
+                </div>
+              </div>
+            </div>
+            <div class="flex-1 w-full mt-5">
+              <div class="flex flex-col h-full">
+                <div class="text-black mb-5">
+                  <div
+                    class="mx-auto lg:mx-0 gradient text-gray-800 font-bold rounded-full mt-8 mb-2 py-4 px-8 shadow-lg"
+                  >
+                    Projects
+                  </div>
+                </div>
+                <div class="text-black mx-auto">
+                  <p>
+                    <a
+                      href="https://github.com/Lrbll"
+                      class="hover:text-gray-600"
+                      >res.redirect("Github");</a
+                    >
+                  </p>
+                  <p>
+                    <a
+                      href="https://github.com/Lrbll"
+                      class="hover:text-gray-600"
+                      >res.render("portfolio");</a
+                    >
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--Footer-->
+    <footer class="gradient">
+      <div class="container mx-auto px-10">
+        <div class="w-full flex flex-col md:flex-row py-6 ml-28">
+          <div class="flex-1">
+            <a
+              href="/songs"
+              class="text-gray-700 hover:text-black md:mb-6 no-underline hover:underline hover:underline-offset-2"
+              >노래</a
+            >
+            <ul class="list-reset mb-6">
+              <li class="mt-2 inline-block mr-2 md:block md:ml-0">
+                <p class="text-gray-100">앨범</p>
+              </li>
+              <li class="mt-2 inline-block mr-2 md:block md:ml-0">
+                <p class="text-gray-100">수록곡</p>
+              </li>
+            </ul>
+          </div>
+          <div class="flex-1">
+            <a
+              href="/works"
+              class="text-gray-700 hover:text-black md:mb-6 no-underline hover:underline hover:underline-offset-2"
+              >활동</a
+            >
+            <ul class="list-reset mb-6">
+              <li class="mt-2 inline-block mr-2 md:block md:ml-0">
+                <p class="text-gray-100">공연</p>
+              </li>
+              <li class="mt-2 inline-block mr-2 md:block md:ml-0">
+                <p class="text-gray-100">예능</p>
+              </li>
+              <li class="mt-2 inline-block mr-2 md:block md:ml-0">
+                <p class="text-gray-100">라디오</p>
+              </li>
+            </ul>
+          </div>
+          <div class="flex-1">
+            <a
+              href="/sns"
+              class="text-gray-700 hover:text-black md:mb-6 no-underline hover:underline hover:underline-offset-2"
+              >SNS</a
+            >
+            <ul class="list-reset mb-6">
+              <li class="mt-2 inline-block mr-2 md:block md:ml-0">
+                <p class="text-gray-100">인스타그램</p>
+              </li>
+              <li class="mt-2 inline-block mr-2 md:block md:ml-0">
+                <p class="text-gray-100">유튜브</p>
+              </li>
+              <li class="mt-2 inline-block mr-2 md:block md:ml-0">
+                <p class="text-gray-100">공식홈페이지</p>
+              </li>
+            </ul>
+          </div>
+          <div class="flex-1">
+            <a
+              href="/contact"
+              class="text-gray-700 hover:text-black md:mb-6 no-underline hover:underline hover:underline-offset-2"
+              >Contact</a
+            >
+            <ul class="list-reset mb-6">
+              <li class="mt-2 inline-block mr-2 md:block md:ml-0">
+                <p class="text-gray-100">Contact</p>
+              </li>
+              <li class="mt-2 inline-block mr-2 md:block md:ml-0">
+                <p class="text-gray-100">Github</p>
+              </li>
+              <li class="mt-2 inline-block mr-2 md:block md:ml-0">
+                <p class="text-gray-100">Projects</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
