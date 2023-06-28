@@ -38,21 +38,12 @@
               >Youra fanclub</span
             >
           </a>
-          <% if (is_logined) { %>
-            <div class="flex items-center lg:order-2">
-              <a
-                href="/auth/logout"
-                class="text-white bg-cyan-700 hover:bg-cyan-800 focus:ring-4 focus:ring-cyan-300 rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0 shadow-md"
-                >로그아웃</a
-              >
-          <% } else { %>
           <div class="flex items-center lg:order-2">
             <a
               href="/auth/login"
               class="text-white bg-cyan-700 hover:bg-cyan-800 focus:ring-4 focus:ring-cyan-300 rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0 shadow-md"
               >로그인</a
             >
-            <% } %>
             <a
               href="/auth/register"
               class="text-white bg-cyan-700 hover:bg-cyan-800 focus:ring-4 focus:ring-cyan-300 rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0 ml-2 shadow-md"
@@ -73,7 +64,6 @@
                   >홈</a
                 >
               </li>
-
               <li>
                 <a
                   href="/songs"
@@ -113,14 +103,7 @@
       <div class="container px-3 mx-auto pb-20">
         <div
           class="w-full justify-center text-center"
-        ><% if (is_logined) { %>
-          <h1 class="my-4 text-5xl font-bold leading-tight py-10">
-            안녕하세요, <span class="text-black overline decoration-dashed"><%= id %></span> 님
-          </h1>
-          <p class="leading-normal text-2xl mb-8">
-            새로운 활동을 둘러보시겠어요?
-          </p>
-          <% } else { %>
+        >
           <h1 class="my-4 text-5xl font-bold leading-tight py-10">
             가수 유라의 팬클럽 사이트 입니다
           </h1>
@@ -128,7 +111,6 @@
             이 곳에서 유라의 노래, 공연, 활동들을 확인해보세요
           </p>
           <a href="/auth/login" class="text-black bg-white hover:bg-black hover:text-white font-semibold rounded-3xl text-sm px-4 lg:px-6 py-2 lg:py-3 sm:mr-2 lg:mr-0 shadow-md">팬클럽 가입</a>
-          <% } %>
         </div>
     </div>
 
@@ -275,7 +257,7 @@
           <div
             class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow"
           >
-            <iframe width="380" height="215" src="https://www.youtube.com/embed/hgIyw1P670A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe class="w-full" src="https://www.youtube.com/embed/hgIyw1P670A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             <p class="w-full text-gray-600 px-6 text-center text-lg font-semibold pt-5 pb-5">
               MV - Jungle Bike
             </p>
@@ -285,7 +267,7 @@
           <div
             class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow"
           >
-            <iframe width="380" height="215" src="https://www.youtube.com/embed/f9rHF8tH8jg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe class="w-full" src="https://www.youtube.com/embed/f9rHF8tH8jg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             <p class="w-full text-gray-600 px-6 text-center text-lg font-semibold pt-5 pb-5">
               MV - 어떤 우울이 우리를 흔들겠어요
             </p>
@@ -295,7 +277,7 @@
           <div
             class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow"
           >
-            <iframe width="380" height="215" src="https://www.youtube.com/embed/MoTlvOrJbRc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe class="w-full" src="https://www.youtube.com/embed/MoTlvOrJbRc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             <p class="w-full text-gray-600 px-6 text-center text-lg font-semibold pt-5 pb-5">
               MV - Rawww
             </p>
@@ -336,7 +318,7 @@
               class="text-gray-900 hover:text-cyan-700 md:mb-6 no-underline hover:underline hover:underline-offset-2"
               >노래</a
             >
-            <ul class="list-reset mb-6">
+            <ul class="text-sm pl-[1px] list-reset mb-6">
               <li class="mt-2 inline-block mr-2 md:block md:ml-0">
                 <p class="text-gray-500">앨범</p>
               </li>
@@ -351,7 +333,7 @@
               class="text-gray-900 hover:text-cyan-700 md:mb-6 no-underline hover:underline hover:underline-offset-2"
               >활동</a
             >
-            <ul class="list-reset mb-6">
+            <ul class="text-sm pl-[1px] list-reset mb-6">
               <li class="mt-2 inline-block mr-2 md:block md:ml-0">
                 <p class="text-gray-500">공연</p>
               </li>
@@ -369,7 +351,7 @@
               class="text-gray-900 hover:text-cyan-700 md:mb-6 no-underline hover:underline hover:underline-offset-2"
               >SNS</a
             >
-            <ul class="list-reset mb-6">
+            <ul class="text-sm pl-[1px] list-reset mb-6">
               <li class="mt-2 inline-block mr-2 md:block md:ml-0">
                 <p class="text-gray-500">인스타그램</p>
               </li>
@@ -390,7 +372,7 @@
               class="text-gray-900 hover:text-cyan-700 md:mb-6 no-underline hover:underline hover:underline-offset-2"
               >Contact</a
             >
-            <ul class="list-reset mb-6">
+            <ul class="text-sm pl-[1px] list-reset mb-6">
               <li class="mt-2 inline-block mr-2 md:block md:ml-0">
                 <p class="text-gray-500">Contact</p>
               </li>

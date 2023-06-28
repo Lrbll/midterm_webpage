@@ -24,7 +24,9 @@
     </style>
   </head>
 
-  <body class="leading-normal tracking-normal overflow-x-hidden text-white gradient overflow-x-hidden">
+  <body
+    class="leading-normal tracking-normal overflow-x-hidden text-white gradient overflow-x-hidden"
+  >
     <!-- 헤더 영역 -->
     <header class="z-10 fixed w-full shadow-md">
       <nav class="bg-white border-gray-200 py-2.5">
@@ -38,21 +40,12 @@
               >Youra fanclub</span
             >
           </a>
-          <% if (is_logined) { %>
-            <div class="flex items-center lg:order-2">
-              <a
-                href="/auth/logout"
-                class="text-white bg-cyan-700 hover:bg-cyan-800 focus:ring-4 focus:ring-cyan-300 rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0 shadow-md"
-                >로그아웃</a
-              >
-          <% } else { %>
           <div class="flex items-center lg:order-2">
             <a
               href="/auth/login"
               class="text-white bg-cyan-700 hover:bg-cyan-800 focus:ring-4 focus:ring-cyan-300 rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0 shadow-md"
               >로그인</a
             >
-            <% } %>
             <a
               href="/auth/register"
               class="text-white bg-cyan-700 hover:bg-cyan-800 focus:ring-4 focus:ring-cyan-300 rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0 ml-2 shadow-md"
@@ -295,7 +288,7 @@
               class="text-gray-900 hover:text-cyan-700 md:mb-6 no-underline hover:underline hover:underline-offset-2"
               >노래</a
             >
-            <ul class="list-reset mb-6">
+            <ul class="text-sm pl-[1px] list-reset mb-6">
               <li class="mt-2 inline-block mr-2 md:block md:ml-0">
                 <p class="text-gray-500">앨범</p>
               </li>
@@ -310,7 +303,7 @@
               class="text-gray-900 hover:text-cyan-700 md:mb-6 no-underline hover:underline hover:underline-offset-2"
               >활동</a
             >
-            <ul class="list-reset mb-6">
+            <ul class="text-sm pl-[1px] list-reset mb-6">
               <li class="mt-2 inline-block mr-2 md:block md:ml-0">
                 <p class="text-gray-500">공연</p>
               </li>
@@ -328,7 +321,7 @@
               class="text-gray-900 hover:text-cyan-700 md:mb-6 no-underline hover:underline hover:underline-offset-2"
               >SNS</a
             >
-            <ul class="list-reset mb-6">
+            <ul class="text-sm pl-[1px] list-reset mb-6">
               <li class="mt-2 inline-block mr-2 md:block md:ml-0">
                 <p class="text-gray-500">인스타그램</p>
               </li>
@@ -349,7 +342,7 @@
               class="text-gray-900 hover:text-cyan-700 md:mb-6 no-underline hover:underline hover:underline-offset-2"
               >Contact</a
             >
-            <ul class="list-reset mb-6">
+            <ul class="text-sm pl-[1px] list-reset mb-6">
               <li class="mt-2 inline-block mr-2 md:block md:ml-0">
                 <p class="text-gray-500">Contact</p>
               </li>

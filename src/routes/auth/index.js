@@ -5,19 +5,18 @@ const router = express.Router();
 const db = require("../../../src/config/db.js");
 const authCheck = require("./authCheck.js");
 
-//get 메소드
-// router.get("/login", (req, res, next) => {
-//   if (authCheck.isOwner(req, res)) {
-//     // 로그인 안되어있으면 로그인 페이지로 이동시킴
-//     res.redirect("/logout");
-//     return false;
-//   } else {
-//     next();
-//   }
-// });
+router.get("/login", (req, res, next) => {
+  if (authCheck.isOwner(req, res)) {
+    // 로그인 안되어있으면 login으로
+    res.redirect("/");
+    return false;
+  } else {
+    next();
+  }
+});
 
 router.get("/login", (req, res) => {
-  res.render("home/login");
+  res.sendFile("login.html", { root: "src/views/home" });
 });
 
 router.get("/logout", (req, res) => {
@@ -27,7 +26,7 @@ router.get("/logout", (req, res) => {
 });
 
 router.get("/register", (req, res) => {
-  res.render("home/register");
+  res.sendFile("register.html", { root: "src/views/home" });
 });
 
 //post 메소드
@@ -51,13 +50,13 @@ router.post("/login", (req, res) => {
           });
         } else {
           res.send(`<script type="text/javascript">alert("로그인 정보가 일치하지 않습니다."); 
-              document.location.href="/login";</script>`);
+              document.location.href="/auth/login";</script>`);
         }
       }
     );
   } else {
     res.send(`<script type="text/javascript">alert("입력되지 않은 정보가 있습니다."); 
-      document.location.href="/login";</script>`);
+      document.location.href="/auth/login";</script>`);
   }
 });
 
@@ -87,18 +86,18 @@ router.post("/register", (req, res) => {
         } else if (pw != confirm_pw) {
           // 비밀번호가 올바르게 입력되지 않은 경우
           res.send(`<script type="text/javascript">alert("비밀번호가 일치하지 않습니다."); 
-                document.location.href="/register";</script>`);
+                document.location.href="/auth/register";</script>`);
         } else {
           // DB에 같은 이름의 회원아이디가 있는 경우
           res.send(`<script type="text/javascript">alert("이미 존재하는 아이디 입니다."); 
-                document.location.href="/register";</script>`);
+                document.location.href="/auth/register";</script>`);
         }
       }
     );
   } else {
     // 입력되지 않은 정보가 있는 경우
     res.send(`<script type="text/javascript">alert("입력되지 않은 정보가 있습니다."); 
-        document.location.href="/register";</script>`);
+        document.location.href="/auth/register";</script>`);
   }
 });
 

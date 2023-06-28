@@ -2,6 +2,7 @@
 
 const express = require("express");
 const router = express.Router();
+const authCheck = require("../auth/authCheck.js");
 // const puppeteer = require("puppeteer");
 
 // async function getYouraOfficialMV() {
@@ -40,31 +41,57 @@ const router = express.Router();
 // }
 
 router.get("/", (req, res) => {
-  const is_logined = req.session.is_logined;
-  const id = req.session.nickname;
-  res.render("home/index", { is_logined, id });
+  res.sendFile("index.html", { root: "src/views/home" });
+});
+
+router.get("/songs", (req, res, next) => {
+  if (!authCheck.isOwner(req, res)) {
+    // 로그인 안되어있으면 login으로
+    res.send(`<script type="text/javascript">alert("로그인 후, 이용할 수 있습니다."); 
+              document.location.href="/auth/login";</script>`);
+    return false;
+  } else {
+    next();
+  }
 });
 
 router.get("/songs", (req, res) => {
-  const is_logined = req.session.is_logined;
-  res.render("home/songs", { is_logined });
+  res.sendFile("songs.html", { root: "src/views/home" });
 });
 
+router.get("/works", (req, res, next) => {
+  if (!authCheck.isOwner(req, res)) {
+    // 로그인 안되어있으면 login으로
+    res.send(`<script type="text/javascript">alert("로그인 후, 이용할 수 있습니다."); 
+              document.location.href="/auth/login";</script>`);
+    return false;
+  } else {
+    next();
+  }
+});
 router.get("/works", async (req, res) => {
-  const is_logined = req.session.is_logined;
   // const mvVideos = await getYouraOfficialMV("youra");
   // console.log(mvVideos);
-  res.render("home/works", { is_logined });
+  res.sendFile("works.html", { root: "src/views/home" });
+});
+
+router.get("/sns", (req, res, next) => {
+  if (!authCheck.isOwner(req, res)) {
+    // 로그인 안되어있으면 login으로
+    res.send(`<script type="text/javascript">alert("로그인 후, 이용할 수 있습니다."); 
+              document.location.href="/auth/login";</script>`);
+    return false;
+  } else {
+    next();
+  }
 });
 
 router.get("/sns", (req, res) => {
-  const is_logined = req.session.is_logined;
-  res.render("home/sns", { is_logined });
+  res.sendFile("sns.html", { root: "src/views/home" });
 });
 
 router.get("/contact", (req, res) => {
-  const is_logined = req.session.is_logined;
-  res.render("home/contact", { is_logined });
+  res.sendFile("contact.html", { root: "src/views/home" });
 });
 
 module.exports = router;
